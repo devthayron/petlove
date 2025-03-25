@@ -20,4 +20,4 @@
 
 1. **Clone o repositório:**  
    ```sh
-   git clone https://github.com/seu-usuario/pet-love.git
+   git clone https://github.com/adrnrocha/petshop.git
