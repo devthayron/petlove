@@ -160,3 +160,14 @@ function initCarousel() {
 if (document.querySelector('.carousel-container')) {
     initCarousel();
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    const menuLinks = document.querySelectorAll(".menu a");
+
+    function activateLink() {
+        menuLinks.forEach((link) => link.classList.remove("active"));
+        this.classList.add("active");
+    }
+
+    menuLinks.forEach((link) => link.addEventListener("click", activateLink));
+});
