@@ -110,3 +110,53 @@ if (document.getElementById('contactForm')) {
         contactForm.reset();
     });
 }
+
+// Carrossel de banners
+function initCarousel() {
+    const slides = document.querySelectorAll('.slide');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    let currentIndex = 0;
+    let interval;
+
+    function updateSlide() {
+        slides.forEach((slide, index) => {
+            slide.style.transform = `translateX(-${currentIndex * 100}%)`;
+            slide.classList.toggle('active', index === currentIndex);
+        });
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateSlide();
+        resetInterval();
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateSlide();
+        resetInterval();
+    }
+
+    function resetInterval() {
+        clearInterval(interval);
+        interval = setInterval(nextSlide, 5000);
+    }
+
+    // Event listeners
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+
+    // Iniciar intervalo
+    resetInterval();
+
+    // Pausar quando o mouse estiver sobre o carrossel
+    const carousel = document.querySelector('.carousel-container');
+    carousel.addEventListener('mouseenter', () => clearInterval(interval));
+    carousel.addEventListener('mouseleave', resetInterval);
+}
+
+// Inicializar carrossel se existir na página
+if (document.querySelector('.carousel-container')) {
+    initCarousel();
+}
