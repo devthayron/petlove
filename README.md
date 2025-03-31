@@ -15,7 +15,6 @@
 ###  Backend  
 - **Python 3** – Linguagem de programação principal.  
 - **Django** – Framework web para desenvolvimento rápido e seguro.  
-- **PostgreSQL** – Banco de dados relacional para armazenamento eficiente de informações.  
 
 ###  Frontend  
 - **HTML5** – Estrutura do site.  
@@ -24,7 +23,7 @@
 
 ##  Como Usar  
 
-### 1️⃣ Clone o repositório  
+### Clone o repositório  
 ```bash
 git clone https://github.com/devthayron/petlove.git
 cd petlove
