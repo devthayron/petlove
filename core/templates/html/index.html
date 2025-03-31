@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PetLove - Pet Shop Moderno</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
@@ -16,11 +17,11 @@
             </div>
             <nav class="menu" id="menu">
                 <ul>
-                    <li><a href="#menu" class="active">Home</a></li>
-                    <li><a href="#servicos">Serviços</a></li>
-                    <li><a href="#produtos">Produtos</a></li>
-                    <li><a href="#quem-somos">Quem Somos</a></li>
-                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="/"class="active">Home</a></li>
+                    <li><a href="{% url 'servicos' %}">Serviços</a></li>
+                    <li><a href="{% url 'produto' %}">Produtos</a></li>
+                    <li><a href="{% url 'quem_somos' %}">Quem Somos</a></li>
+                    <li><a href="{% url 'contato' %}">Contato</a></li>
                 </ul>
             </nav>
         </div>
@@ -140,6 +141,6 @@
         </div>
     </footer>
 
-    <script src="js/scripts.js"></script>
+    <script src="{% static 'js/scripts.js' %}"></script>
 </body>
 </html>
